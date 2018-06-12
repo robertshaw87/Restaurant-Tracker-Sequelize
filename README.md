@@ -1,11 +1,11 @@
 # Restaurant-Tracker
-[Restaurant Tracker](https://fathomless-coast-46070.herokuapp.com/)
+[Restaurant Tracker](https://sequelize-restaurant.herokuapp.com/)
 
 Create a list of restaurants you wish to visit, and then, after you've visited them, you can decide whether you liked or disliked them!
 
 ## Getting Started
 
-Open up the [project link](https://fathomless-coast-46070.herokuapp.com/) and you should be able to see the webpage shown below:
+Open up the [project link](https://sequelize-restaurant.herokuapp.com/) and you should be able to see the webpage shown below:
 
 ![Restaurant Tracker](readme/readme.gif "Restaurant Tracker")
 
@@ -45,19 +45,12 @@ No installation needed! Just open the page in your preferred browser.
 
 * [Handlebars](http://handlebarsjs.com/) - Semantic templates for HTML generation
 
-* [mySQL](https://www.npmjs.com/package/mysql) - Make server-side SQL queries
+* [mySQL2](https://www.npmjs.com/package/mysql2) - Make server-side SQL queries
+
+* [sequelize](https://www.npmjs.com/package/sequelize) - ORM for SQL database
 
 ## Challenges
-I dove into Handlebars and the MVC model with this project. Handlebars is very convenient for just serving up pages without having to write a lot of javascript or repeating html.
-
-![Handlebars](readme/handlebars.png "Handlebars")
-![Restaurant Tracker](readme/handlebars-partial.png "Restaurant Tracker")
-
-I explored handlebar's built in conditionals and iterators in order to minimize repeated code. Partials have been incredibly useful for creating dynamic content relatively painlessly.
-
-![Model View Controller](readme/mvc.png "Model View Controller")
-
-I took a baby step towards using the MVC model last project, but I fully utilized the model this time. This was a great experience that will prepare me for working with larger projects.
+I ported my restaurant tracker over to Sequelize. Apparently, the custom ORM I'd made was very similar in syntax to sequelize, so there was minial fuss in the transfer. Learning to use Sequelize will make future interactions with SQL databases so much easier.
 
 ## Authors
 
