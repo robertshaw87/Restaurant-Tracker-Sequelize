@@ -1,0 +1,11 @@
+<div class="restaurant-item row mt-4 mb-4">
+	{{#if visited}}
+	<div class="col-9 text-left"><h5 class="restaurant-name mt-2">{{name}}</h5></div>
+	<div class="col-3 text-right"><button class="btn btn-light delete-restaurant" data-id="{{id}}"><i class="fas fa-trash-alt"></i></button></div>
+	{{else}}
+	<div class="col-3 text-left"><button type="button" class="btn btn-success rate-restaurant" data-id="{{id}}" data-liked="true"><i class="fas fa-thumbs-up"></i></button></div>
+	<div class="col-6 text-center"><h5 class="restaurant-name mt-2">{{name}}</h5></div>
+    <div class="col-3 text-right"><button type="button" class="btn btn-danger rate-restaurant" data-id="{{id}}" data-liked="false"><i class="fas fa-thumbs-down"></i></button></div>
+	{{/if}}
+</div>
+<hr>

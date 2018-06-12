@@ -1,0 +1,78 @@
+<div class="jumbotron jumbotron-fluid text-light text-center p-2 mb-5">
+    <div class="container">
+        {{!-- <img src="/app/images/survey.gif" alt="Survey Cat" class="m-0 ml-5 float-left" id="survey-cat"> --}}
+        <h1 class="display-4">Restaurant Tracker</h1>
+        <p class="lead">Track and rate you favorite (and least favorite) restaurants!</p>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 col-md-9 col-lg-7">
+                <form class="add-restaurant-form" action="/api/restaurants" method="post">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="restaurant-name" name="name"
+                                aria-label="Restaurant Name" aria-describedby="basic-addon2"
+                                placeholder="Restaurant Name"
+                                onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = 'Restaurant Name'">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-light" type="submit">Add Restaurant</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid text-light">
+    <div class="row">
+        <div class="col-12 col-lg-4 mb-4">
+            <div class="card" id="liked-restaurant-card">
+                <div class="card-header"><h4><i class="fas fa-thumbs-up mr-3"></i>Liked Restaurants</h4></div>
+                <div class="card-body">
+                    <div class="card-text">
+                        {{#each restaurants}}
+                            {{#if this.visited}}
+                                {{#if this.liked}}
+                                    {{> restaurants/restaurant-item}}
+                                {{/if}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 mb-4">
+            <div class="card" id="unvisited-restaurant-card">
+                <div class="card-header"><h4>Unvisited Restaurants</h4></div>
+                <div class="card-body">
+                    <div class="card-text">
+                        {{#each restaurants}}
+                            {{#unless this.visited}}
+                                {{> restaurants/restaurant-item}}
+                            {{/unless}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 mb-4">
+            <div class="card" id="disliked-restaurant-card">
+                <div class="card-header"><h4><i class="fas fa-thumbs-down mr-3"></i>Disliked Restaurants</h4></div>
+                <div class="card-body">
+                    <div class="card-text">
+                        {{#each restaurants}}
+                            {{#if this.visited}}
+                                {{#unless this.liked}}
+                                    {{> restaurants/restaurant-item}}
+                                {{/unless}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
